@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Background Slider</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Dugnic Travels</h1>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="slider-container">
+        <div class="slide active"
+            style="background-image: url('Assets/cheetah.jpg');">
+        </div>
+        <div class="slide"
+            style="background-image: url('Assets/gazzelle.jpg');">
+        </div>
+        <div class="slide"
+            style="background-image: url('Assets/elephant.jpg');">
+        </div>
+        <div class="slide"
+            style="background-image: url('Assets/leopard.jpg');">
+        </div>
+        <button class="explore">Explore</button>
+
+        <button class="arrow left-arrow" id="left">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="arrow right-arrow" id="right">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </section>
+
+    <div class="vision-mission">
+        <div class="container">
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>To become the leading authority in crafting extraordinary travel experiences that transcend the ordinary, enriching the lives of our clients by connecting them with the world’s wonders in a profound and meaningful way. We envisioned a future where Dugnic Travels and Expeditions is synonymous with innovation, authenticity, and unparalleled adventure, inspiring travellers to embrace the spirit of exploration and make lasting memories that resonate for a lifetime.</p>
+            </div>
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>At Dugnic Travels and Expedition, our mission is to create unforgettable journeys and provide exceptional travel services to our clients. We strive to deliver unique and tailor-made travel experiences that exceed expectations, unlocking the beauty and wonders of the world for everyone to explore.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

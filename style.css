@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  overflow: hidde;
+  margin: 0;
+  background-position: center center;
+  background-size: cover;
+  transition: 0.4s;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.slider-container {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  height: 70vh;
+  width: 70vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  opacity: 0;
+  height: 100vh;
+  width: 100vw;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: -15vh;
+  left: -15vw;
+  transition: 0.4s ease;
+ /* z-index: ;*/
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.arrow {
+  background-color: transparent;
+  color: #fff;
+  padding: 20px;
+  font-size: 30px;
+  border: 2px solid orange;
+  cursor: pointer;
+}
+
+.explore {
+  color: #a9ffa9; /* Jungle green text color */
+  background-color: purple; /* Purple background color */
+  padding: 10px 10px; /* Adjust padding as needed */
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  font-size: 14px; /* Adjust font size as needed */
+  font-weight: bold; /* Make text bold */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Increased letter spacing */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.explore:hover {
+  background-color: #008000; /* Change background color on hover */
+  color: #ffffff; /* Change text color on hover */
+}
+
+
+.arrow:focus {
+  outline: 0;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* Add this to your existing style.css file */
+
+/* Navbar styles */
+/* Add this to your existing style.css file */
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #4a4a72, #008000); /* Gradient of purple to jungle green */
+  color: #ffffff;
+  padding: 20px 0;
+  z-index: 3;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin: 0;
+  padding: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #bcc8bc;
+}
+.vision-mission {
+  background-color: purple; /* Jungle green background */
+  padding: 50px 0;
+}
+
+.vision-mission .container {
+  max-width: 800px; /* Adjust width as needed */
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center; /* Center align text */
+}
+
+.vision-mission h2 {
+  font-size: 36px; /* Larger font size */
+  color: #ffffff; /* White text */
+  margin-bottom: 30px; /* Increased bottom margin */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Increased letter spacing */
+}
+
+.vision-mission p {
+  font-size: 17px; /* Larger font size */
+  line-height: 1.6;
+  color: #ffffff; /* White text */
+  margin-bottom: 40px; /* Increased bottom margin */
+}
+
+.vision-mission p:last-child {
+  margin-bottom: 0; /* Remove bottom margin for last paragraph */
+}
+
+
+@media only screen and (min-width: 768px) {
+  .menu-toggle{display: none;}
+}
+
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px 0; /* Reduce padding for mobile */
+  }
+
+  .logo {
+    font-size: 20px; /* Decrease font size for mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links by default on mobile */
+    flex-direction: column; /* Stack nav links vertically */
+    position: absolute;
+    top: 100%; /* Position below navbar */
+    left: 70%;
+    background-color: #4a4a72; /* Purple background */
+    width: 30%;
+    padding: 10px 0;
+    z-index: 2;
+  }
+
+  .nav-links.show {
+    display: flex; /* Show nav links when toggled */
+  }
+
+  .nav-links li {
+    margin: 0;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block; /* Make nav links full width */
+    padding: 10px 20px; /* Add padding to nav links */
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    background-color: #008000; /* Change background color on hover */
+  }
+}
