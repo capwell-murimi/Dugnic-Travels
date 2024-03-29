@@ -210,11 +210,12 @@ body::before {
     position: absolute;
     top: 100%; /* Position below navbar */
     left: 70%;
-    background-color: #4a4a72; /* Purple background */
+    background-color: purple; /* Purple background */
     width: 30%;
     height: 270px;
     padding: 10px 0;
     z-index: 2;
+    border-radius: 10px;
   }
 
   .nav-links.show {
@@ -236,6 +237,7 @@ body::before {
 
   .nav-links li a:hover {
     background-color: #008000; /* Change background color on hover */
+    width: auto;
   }
 
 

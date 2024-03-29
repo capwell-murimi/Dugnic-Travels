@@ -39,11 +39,30 @@ function setActiveSlide() {
   slides[activeSlide].classList.add('active')
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   menuToggle.addEventListener('click', function () {
       navLinks.classList.toggle('show'); // Toggle the .show class on nav-links
+  });
+}); */
+
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  // Toggle menu function
+  function toggleMenu() {
+      navLinks.classList.toggle('show'); // Toggle the .show class on nav-links
+  }
+
+  menuToggle.addEventListener('click', toggleMenu); // Toggle menu when menu button is clicked
+
+  // Hide menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function () {
+          toggleMenu(); // Hide the menu
+      });
   });
 });
