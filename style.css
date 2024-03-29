@@ -237,4 +237,24 @@ body::before {
   .nav-links li a:hover {
     background-color: #008000; /* Change background color on hover */
   }
+
+
+
+  .vision-mission {
+    padding: 30px 20px; /* Adjust padding for mobile */
+}
+
+.vision-mission .container {
+    max-width: 100%; /* Full width for mobile */
+}
+
+.vision-mission h2 {
+    font-size: 24px; /* Decrease font size for mobile */
+    margin-bottom: 20px; /* Decrease bottom margin for mobile */
+}
+
+.vision-mission p {
+    font-size: 16px; /* Decrease font size for mobile */
+    margin-bottom: 30px; /* Decrease bottom margin for mobile */
+}
 }
