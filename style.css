@@ -212,7 +212,7 @@ body::before {
     left: 70%;
     background-color: #4a4a72; /* Purple background */
     width: 30%;
-    height: 50px;
+    height: 270px;
     padding: 10px 0;
     z-index: 2;
   }
@@ -228,7 +228,7 @@ body::before {
 
   .nav-links li a {
     display: block; /* Make nav links full width */
-    padding: 10px 20px; /* Add padding to nav links */
+    padding: 20px 20px; /* Add padding to nav links */
     color: #ffffff;
     text-decoration: none;
     transition: background-color 0.3s ease;
