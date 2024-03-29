@@ -212,6 +212,7 @@ body::before {
     left: 70%;
     background-color: #4a4a72; /* Purple background */
     width: 30%;
+    height: 50px;
     padding: 10px 0;
     z-index: 2;
   }
