@@ -209,9 +209,9 @@ body::before {
     flex-direction: column; /* Stack nav links vertically */
     position: absolute;
     top: 100%; /* Position below navbar */
-    left: 70%;
+    left: 60%;
     background-color: purple; /* Purple background */
-    width: 30%;
+    width: 40%;
     height: 270px;
     padding: 10px 0;
     z-index: 2;

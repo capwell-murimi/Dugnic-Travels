@@ -57,12 +57,22 @@ document.addEventListener('DOMContentLoaded', function () {
       navLinks.classList.toggle('show'); // Toggle the .show class on nav-links
   }
 
-  menuToggle.addEventListener('click', toggleMenu); // Toggle menu when menu button is clicked
+  menuToggle.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent body click event from firing
+      toggleMenu(); // Toggle menu when menu button is clicked
+  });
 
   // Hide menu when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function () {
           toggleMenu(); // Hide the menu
       });
+  });
+
+  // Hide menu when clicking elsewhere on the screen
+  document.body.addEventListener('click', function(event) {
+      if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+          navLinks.classList.remove('show'); // Hide the menu if clicked outside of nav-links or menu-toggle
+      }
   });
 });
