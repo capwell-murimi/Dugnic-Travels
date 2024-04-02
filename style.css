@@ -176,6 +176,7 @@ body::before {
   margin-bottom: 30px; /* Increased bottom margin */
   text-transform: uppercase; /* Uppercase text */
   letter-spacing: 2px; /* Increased letter spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Horizontal shadow, Vertical shadow, Blur radius, Shadow color */
 }
 
 .vision-mission p {
@@ -241,7 +242,7 @@ body::before {
 }
 
 .about-content ul li::before {
-  content: "\2022"; /* Bullet point character */
+  /*content: "\2022"; /* Bullet point character */
   color: #008000;
   font-size: 1.2em;
   margin-right: 10px;
