@@ -134,13 +134,24 @@ body::before {
 
 .logo {
   font-family: 'Arial Black', sans-serif;
-  font-size: 28px;
-  color: #fff;
-  margin: 0;
-  padding: 14px 20px;
+  font-size: 36px; /* Adjust font size as needed */
+  color: #faf4f4; /* Adjust color as needed */
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-top: 20px; /* Adjust margin as needed */
+  margin-bottom: 20px; /* Adjust margin as needed */
+  animation: pulse 2s  alternate; /* Apply animation */
 }
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
 
 .nav-links {
   list-style: none;
@@ -197,64 +208,60 @@ body::before {
 
 .about-section {
   padding: 50px 0;
-  background-color: #008000;
-  width: 100%;
-}
-
-.about-section .container {
-  text-align: center;
+  background-color: #f9f9f9;
 }
 
 .about-section h2 {
   font-size: 2em;
-  color: #ffffff;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.circle-image {
+  text-align: center;
   margin-bottom: 30px;
 }
 
-.about-content {
-  max-width: 800px;
+.about-image {
+  width: 200px; /* Adjust image width as needed */
+  height: 200px; /* Adjust image height as needed */
+  border-radius: 50%; /* Create circular shape */
+  border: 5px solid #fff; /* Add border around the image */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+.container {
+  max-width: 1200px; /* Adjust container width as needed */
   margin: 0 auto;
-  padding: 30px;
-  background-color: rgb(236, 228, 236);
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+}
+
+.about-content {
+  text-align: center;
 }
 
 .about-content p {
-  font-size: 1.1em;
-  line-height: 1.8;
-  color: #444;
+  font-size: 1.2em;
+  color: #555;
   margin-bottom: 20px;
 }
 
 .about-content ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
-  margin-top: 30px;
 }
 
 .about-content ul li {
   font-size: 1.1em;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 15px;
+  color: #666;
+  margin-bottom: 10px;
 }
 
-.about-content ul li .highlight {
+.highlight {
   font-weight: bold;
-  color: #008000;
+  color: #007bff; /* Change highlight color as needed */
 }
 
-.about-content ul li::before {
-  /*content: "\2022"; /* Bullet point character */
-  color: #008000;
-  font-size: 1.2em;
-  margin-right: 10px;
-}
-.circle-image {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
 .rectangular-image img {
   width: 100%;
@@ -498,7 +505,7 @@ body::before {
     position: absolute;
     top: 100%; /* Position below navbar */
     left: 0%;
-    background-color: purple; /* Purple background */
+    background-color: rgb(215, 79, 215); /* Purple background */
     width: 100%;
     height: 270px;
     padding: 10px 0;
