@@ -29,7 +29,7 @@ body::before {
   z-index: -1;
 }
 
-.slider-container {
+/*.slider-container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   height: 70vh;
   width: 70vw;
@@ -47,7 +47,7 @@ body::before {
   top: -15vh;
   left: -15vw;
   transition: 0.4s ease;
- /* z-index: ;*/
+ /* z-index: ;
 }
 
 .slide.active {
@@ -61,7 +61,64 @@ body::before {
   font-size: 30px;
   border: 2px solid orange;
   cursor: pointer;
+}*/
+
+
+
+
+
+
+.slider-container {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  height: 70vh;
+  width: 70vw;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
 }
+
+.slide {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.arrow {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  border: 2px solid orange;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+
+
+
+
+
+
 
 .explore {
   color: #a9ffa9; /* Jungle green text color */
@@ -86,7 +143,7 @@ body::before {
 }
 
 
-.arrow:focus {
+/*.arrow:focus {
   outline: 0;
 }
 
@@ -102,7 +159,7 @@ body::before {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-}
+}*/
 
 
 /* Add this to your existing style.css file */

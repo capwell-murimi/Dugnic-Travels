@@ -1,43 +1,49 @@
-const body = document.body
-const slides = document.querySelectorAll('.slide')
-const leftBtn = document.getElementById('left')
-const rightBtn = document.getElementById('right')
+const body = document.body;
+const slides = document.querySelectorAll('.slide');
+const leftBtn = document.getElementById('left');
+const rightBtn = document.getElementById('right');
+let activeSlide = 0;
 
-let activeSlide = 0
-
-rightBtn.addEventListener('click', () => {
-  activeSlide++
-
-  if (activeSlide > slides.length - 1) {
-    activeSlide = 0
-  }
-
-  setBgToBody()
-  setActiveSlide()
-})
-
-leftBtn.addEventListener('click', () => {
-  activeSlide--
-
-  if (activeSlide < 0) {
-    activeSlide = slides.length - 1
-  }
-
-  setBgToBody()
-  setActiveSlide()
-})
-
-setBgToBody()
+function nextSlide() {
+    activeSlide++;
+    if (activeSlide > slides.length - 1) {
+        activeSlide = 0;
+    }
+    setBgToBody();
+    setActiveSlide();
+}
 
 function setBgToBody() {
-  body.style.backgroundImage = slides[activeSlide].style.backgroundImage
+    body.style.backgroundImage = slides[activeSlide].style.backgroundImage;
 }
 
 function setActiveSlide() {
-  slides.forEach((slide) => slide.classList.remove('active'))
-
-  slides[activeSlide].classList.add('active')
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[activeSlide].classList.add('active');
 }
+
+// Automatically advance to the next slide every 3 seconds
+const intervalId = setInterval(nextSlide, 3000);
+
+// Stop the auto-advance when left or right button is clicked
+leftBtn.addEventListener('click', () => clearInterval(intervalId));
+rightBtn.addEventListener('click', () => clearInterval(intervalId));
+
+leftBtn.addEventListener('click', () => {
+    activeSlide--;
+    if (activeSlide < 0) {
+        activeSlide = slides.length - 1;
+    }
+    setBgToBody();
+    setActiveSlide();
+});
+
+rightBtn.addEventListener('click', () => {
+    nextSlide();
+});
+
+setBgToBody();
+
 
 /*document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
