@@ -333,6 +333,7 @@ body::before {
   padding: 50px 0;
   background-color: #f9f9f9;
   text-align: center;
+  left: 10px;
 }
 
 .contact-section h2 {
