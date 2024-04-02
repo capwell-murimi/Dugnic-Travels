@@ -347,7 +347,7 @@ body::before {
 
 /* Footer */
 .footer {
-  background-color: #008000;
+  background-color: #333;
   color: #fff;
   padding: 40px 0;
   width: 100%;
@@ -410,6 +410,64 @@ body::before {
 
 
 @media only screen and (max-width: 768px) {
+
+/* Mobile footer styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  margin-bottom: 20px;
+}
+
+.footer-logo h2 {
+  font-size: 1.5em;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social {
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.footer-social a:hover {
+  color: #008000;
+}
+
+.footer-copy {
+  font-size: 0.8em;
+}
+
+
+
   .navbar {
     padding: 10px 0; /* Reduce padding for mobile */
   }
@@ -473,4 +531,5 @@ body::before {
     font-size: 16px; /* Decrease font size for mobile */
     margin-bottom: 30px; /* Decrease bottom margin for mobile */
 }
+
 }
