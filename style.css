@@ -133,9 +133,13 @@ body::before {
 }
 
 .logo {
-  font-size: 24px;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 28px;
+  color: #fff;
   margin: 0;
-  padding: 10px;
+  padding: 14px 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .nav-links {
@@ -252,6 +256,16 @@ body::before {
   margin-bottom: 20px;
 }
 
+.rectangular-image img {
+  width: 100%;
+  height: 1000px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px; /* Optional: Add rounded corners for aesthetics */
+}
+
+
+
 .about-image {
   border-radius: 50%;
   width: 150px; /* Adjust the width and height as needed */
@@ -286,6 +300,7 @@ body::before {
 .service {
   width: 300px;
   margin: 20px;
+  height: auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
@@ -482,9 +497,9 @@ body::before {
     flex-direction: column; /* Stack nav links vertically */
     position: absolute;
     top: 100%; /* Position below navbar */
-    left: 60%;
+    left: 0%;
     background-color: purple; /* Purple background */
-    width: 40%;
+    width: 100%;
     height: 270px;
     padding: 10px 0;
     z-index: 2;
@@ -509,7 +524,7 @@ body::before {
   }
 
   .nav-links li a:hover {
-    background-color: #008000; /* Change background color on hover */
+    color: #008000; /* Change background color on hover */
     width: auto;
   }
 
@@ -534,3 +549,9 @@ body::before {
 }
 
 }
+
+
+
+
+
+
