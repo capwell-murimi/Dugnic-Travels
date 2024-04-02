@@ -20,15 +20,15 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="slider-container">
+    <section id="home" class="slider-container">
         <div class="slide active"
             style="background-image: url('Assets/cheetah.jpg');">
         </div>
@@ -87,8 +87,76 @@
             </div>
         </div>
     </section>
+
+
+
+    <section id="services" class="services-section">
+        <h2 style="text-align: center;"><i class="fas fa-compass"></i> Our Services</h2>
+    <div class="container">
+        <div class="services-wrapper">
+            <div class="service">
+                <h3>Adventure Travel</h3>
+                <p>Dugnic Travels specializes in organizing thrilling adventure trips to various destinations worldwide. These adventures encompass activities like trekking, hiking, mountaineering, and wildlife safaris, ensuring an adrenaline-filled experience for adventure enthusiasts.</p>
+            </div>
+            <div class="service">
+                <h3>Cultural Expeditions</h3>
+                <p>We facilitate deep cultural immersion by offering guided tours to heritage sites, historical landmarks, and indigenous communities. Our cultural expeditions allow travelers to discover rich traditions, local customs, and authentic cultural experiences.</p>
+            </div>
+            <div class="service">
+                <h3>Luxury Travel</h3>
+                <p>Dugnic Travels understands the desire for luxury and comfort during travel. We provide impeccable services, including luxury accommodation, private transportation, and personalized itineraries, ensuring a lavish and indulgent journey for our discerning clients.</p>
+            </div>
+            <div class="service">
+                <h3>Corporate Travel Management</h3>
+                <p>Our corporate travel services cater to businesses, offering comprehensive travel management solutions. From arranging flights and accommodations to organizing conferences and team-building activities, Dugnic Travels ensures seamless corporate travel experiences.</p>
+            </div>
+            <div class="service">
+                <h3>Specialized Group Tours</h3>
+                <p>We curate specialized group tours tailored to specific interests, such as photography, gastronomy, or wellness. These tours foster a sense of camaraderie among like-minded individuals, creating unique and enriching group travel experiences.</p>
+            </div>
+        </div>
+    </div>
+</section>
     
-    <script src="script.js"></script>
+
+<section id="contact" class="contact-section">
+    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+    <div class="container">
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Dugnic Travels</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2024 Dugnic Travels. All Rights Reserved.</p>
+    </div>
+</footer>
+    
+<script src="script.js"></script>
 </body>
 
 </html>

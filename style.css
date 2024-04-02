@@ -260,6 +260,147 @@ body::before {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
 }
 
+/*services*/
+.services-section {
+  padding: 50px 0;
+  background-color: purple;
+}
+
+.services-section .container {
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+  font-size: 1.5em;
+  color: #008000;
+  margin-bottom: 15px;
+}
+
+.service p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+
+/* Contact Section */
+.contact-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #008000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #006400;
+}
+
+/* Footer */
+.footer {
+  background-color: #008000;
+  color: #fff;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+}
+
+.footer-logo h2 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social a {
+  color: rgb(234, 215, 234);
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.footer-social a:hover {
+  color: purple;
+}
+
+.footer-copy {
+  margin-top: 20px;
+}
+
 
 
 
