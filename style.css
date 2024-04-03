@@ -615,6 +615,40 @@ body::before {
 
 
 
+
+/* CSS for mobile version */
+@media only screen and (max-width: 600px) {
+  /* Adjust the layout of the container */
+  .vision-mission .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust the style for vision and mission sections */
+  .vision-mission .vision,
+  .vision-mission .mission {
+    margin-bottom: 20px;
+  }
+
+  /* Adjust the font size for headings */
+  .vision-mission h2 {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  /* Adjust the font size for paragraph */
+  .vision-mission p {
+    font-size: 14px; /* Adjust font size */
+  }
+}
+
+
+
+
+
+
+
+
 /* CSS for mobile version */
 @media only screen and (max-width: 600px) {
   /* Adjust the section layout */
