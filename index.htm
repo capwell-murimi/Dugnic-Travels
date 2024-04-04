@@ -112,7 +112,39 @@
             
 
 
-
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.4);
+            }
+            
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+            
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
             /* CSS for mobile version */
 @media only screen and (max-width: 600px) {
     .services-section .services-container {
@@ -180,6 +212,39 @@
           }
         }
     </script>
+
+
+
+
+
+        
+
+    <script>
+        var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.querySelector(".button");
+
+// When the user clicks the button, open the modal 
+function openModal() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+
+
+
 
 
     <script type="text/javascript">
@@ -274,11 +339,11 @@
                 <div class="about__container container grid">
                     <div class="about__data">
                         <h2 class="section__title about__title">More<br> About Us</h2>
-                        <p style="color: white;" class="about__description" style="font-size: 14px; line-height: 1.5;">Established in April 2024, Dugnic Travels and Expeditions offers tailored travel experiences, ranging from adventure trips to luxury accommodations and corporate travel management. We prioritize customer satisfaction, integrity, and sustainable tourism practices to inspire exploration and enrich lives.</p>
+                        <p style="color: white;" class="about__description" style="font-size: 14px; line-height: 1.5;">Dugnic Travels and Expeditions offers tailored travel experiences, ranging from adventure trips to luxury accommodations and corporate travel management. We prioritize customer satisfaction, integrity, and sustainable tourism practices to inspire exploration and enrich lives.</p>
 
                         <a style="color: black; cursor: pointer;" class="button" onclick="toggleText()">Read more</a>
                         <div class="additional-text" id="additionalText">
-                          <p>This is the additional text that will be displayed when you click "Read more".</p>
+                          <p>This is the additional text that will be displayed when you click "Read more"(to be added).</p>
                         </div>
                     </div>
 
@@ -304,7 +369,7 @@
                         <div class="discover__card swiper-slide">
                             <img src="assets/img/hippo.jpg" alt="" class="discover__img">
                             <div class="discover__data">
-                                <h2 class="discover__title">Amboselli</h2>
+                                <h2 class="discover__title">Amboseli</h2>
                                 <span class="discover__description">24 tours available</span>
                             </div>
                         </div>
@@ -337,7 +402,28 @@
                         </div>
 
                     </div>
-                    <a style="color: black; cursor: pointer;" class="button" onclick="">Book with us</a>
+
+                    
+                    <a style="color: black; cursor: pointer;" class="button" onclick="openModal()">Book with us</a>
+                    
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                          <span class="close" onclick="closeModal()">&times;</span>
+                          <h2>Book with Us</h2>
+                          <form action="/submit_booking" method="post">
+                              <!-- Your form fields go here -->
+                              <label for="name">Name:</label>
+                              <input type="text" id="name" name="name" required><br><br>
+                              <label for="email">Email:</label>
+                              <input type="email" id="email" name="email" required><br><br>
+                              <button type="submit">Submit</button>
+                          </form>
+                        </div>
+                      
+                      </div>
+                      
                     
                 </div>
             </section>
