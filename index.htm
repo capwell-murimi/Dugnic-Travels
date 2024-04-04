@@ -1,263 +1,559 @@
-
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-    <link rel="stylesheet" href="style.css" />
-    <title>Dugnic Travels</title>
-</head>
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/660c7990a0c6737bd1279924/1hqgblnpn';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+
+
+        <title>Responsive Website Travel</title>
+    </head>
+
+
+    <style>
+        .additional-text {
+            display: none;
+          }
+
+        .services-section{
+            background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(assets/img/lion.jpg);
+            background-size: cover;
+            padding: 60px 0;
+            width: 100%;
+            }
+            
+            
+            .inner-width{
+            width: 100%;
+            max-width:1200px ;
+            margin: auto;
+            padding:0 20px ;
+            overflow: hidden;
+            }
+             
+            
+            .section-title{
+            text-align: center;
+            color: #ddd;
+            text-transform: uppercase;
+            font-size: 30px;
+            }
+            
+            
+            .border{
+            width: 160px;
+            height: 2px;
+            background:#82ccdd ;
+            margin:40px auto ;
+            }
+            
+            
+            .services-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            }
+            
+            
+            .service-box{
+            max-width: 33.33%;
+            padding:10px;
+            text-align: center;
+            color: #ddd;
+            cursor:pointer;
+            }
+            
+            .service-icon{
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+                border: 3px solid #82ccdd;
+                color: #82ccdd;
+                transform: rotate(45deg);
+                margin-bottom: 30px;
+                margin-top: 16px;
+                transition: 0.3s linear;
+            }
+            
+            .service-icon i {
+            line-height: 70px;
+            transform: rotate(-45deg);
+            font-size: 26px;
+            }
+            
+            .service-box:hover .service-icon{
+                background: #82ccdd;
+                color:#ddd ;
+            }
+            
+             .service-title{
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+             }
+            
+            .service-desc{
+                font-size: 14px; 
+            }
+            
+            @media screen and (max-width:960px){
+                .service-box{
+                    max-width: 45%
+                }
+            }
+            
+            @media screen and (max-width:768px){
+                .service-box{
+                    max-width: 50%
+                }
+            }
+            
+            @media screen and (max-width:480px){
+                .service-box{
+                    max-width: 100%
+                }
+            }
+        
+            
+          
+
+
+    </style>
+
+
+
+    <script>
+        function toggleText() {
+          var additionalText = document.getElementById("additionalText");
+          if (additionalText.style.display === "none") {
+            additionalText.style.display = "block";
+            document.querySelector('.button').textContent = "Read less";
+          } else {
+            additionalText.style.display = "none";
+            document.querySelector('.button').textContent = "Read more";
+          }
+        }
     </script>
-    <!--End of Tawk.to Script-->
+
+
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/660c7990a0c6737bd1279924/1hqgblnpn';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a style="color: white;" href="#" class="nav__logo">DUGNIC TRAVELS</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a style="color: white;" href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a style="color: white;" href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a style="color: white;" href="#discover" class="nav__link">Discover</a>
+                        </li>
+                        <li class="nav__item">
+                            <a style="color: white;" href="#services" class="nav__link">Services</a>
+                        </li>
+                    </ul>
+
+                    <!-- <div class="nav__dark">
+                         Theme change button 
+                        <span class="change-theme-name">Dark mode</span>
+                        <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    </div>-->
+
+                    <i class="ri-close-line nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <img src="assets/img/elephant.jpg" alt="" class="home__img">
+
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <!--<span class="home__data-subtitle">Discover your place</span>-->
+                        <h1 class="home__data-title">Explore The <br> Best <b>Beautiful <br> Savannah</b></h1>
+                        <a style="color: black;" href="#" class="button">Explore</a>
+
+                    </div>
+
+                    <div class="home__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                            <i class="ri-facebook-box-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__info">
+                        <div>
+                            <span style="color: black;" class="home__info-title">The best places to visit</span>
+                            <a style="color: black;" href="#discover" class="button button--flex button--link home__info-button">
+                                More <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="home__info-overlay">
+                            <img src="assets/img/buffallo.jpg" alt="" class="home__info-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">More<br> About Us</h2>
+                        <p class="about__description" style="font-size: 14px; line-height: 1.5;">Established in April 2024, Dugnic Travels and Expeditions offers tailored travel experiences, ranging from adventure trips to luxury accommodations and corporate travel management. We prioritize customer satisfaction, integrity, and sustainable tourism practices to inspire exploration and enrich lives.</p>
+
+                        <a style="color: black; cursor: pointer;" class="button" onclick="toggleText()">Read more</a>
+                        <div class="additional-text" id="additionalText">
+                          <p>This is the additional text that will be displayed when you click "Read more".</p>
+                        </div>
+                    </div>
+
+                    <div class="about__img">
+                        <div class="about__img-overlay">
+                            <img src="assets/img/lion.jpg" alt="" class="about__img-one">
+                        </div>
+
+                        <div class="about__img-overlay">
+                            <img src="assets/img/girrafe.jpg" alt="" class="about__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!--==================== DISCOVER ====================-->
+            <section class="discover section" id="discover">
+                <h2 class="section__title">Discover the most <br> attractive places</h2>
+                
+                <div class="discover__container container swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--==================== DISCOVER 1 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboselli</h2>
+                                <span class="discover__description">24 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 2 ====================-->
+                        <!--<div class="discover__card swiper-slide">
+                            <img src="assets/img/elephant2.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Tsavo</h2>
+                                <span class="discover__description">15 tours available</span>
+                            </div>
+                        </div>-->
+
+                        <!--==================== DISCOVER 3 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/rhino.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Tsavo</h2>
+                                <span class="discover__description">18 tours available</span>
+                            </div>
+                        </div>
+
+                        <!--==================== DISCOVER 4 ====================-->
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/buffalo2.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Maasai Mara</h2>
+                                <span class="discover__description">18 tours available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== EXPERIENCE ====================-->
+            <section class="experience section">
+                <h2 class="section__title">With Our Experience <br> We Will Serve You</h2>
+
+                <div class="experience__container container grid">
+                    <div class="experience__content grid">
+                        <div class="experience__data">
+                            <h2 class="experience__number">10</h2>
+                            <span class="experience__description">Year <br> Experience</span>
+                        </div>
+
+                        <div class="experience__data">
+                            <h2 class="experience__number">75</h2>
+                            <span class="experience__description">Complete <br> tours</span>
+                        </div>
+
+                        <div class="experience__data">
+                            <h2 class="experience__number">650+</h2>
+                            <span class="experience__description">Tourist <br> Destination</span>
+                        </div>
+                    </div>
+
+                    <div class="experience__img grid">
+                        <div class="experience__overlay">
+                            <img src="assets/img/landrover.jpg" alt="" class="experience__img-one">
+                        </div>
+                        
+                        <div class="experience__overlay">
+                            <img src="assets/img/buffallo.jpg" alt="" class="experience__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== VIDEO ====================-->
+            <section class="video section">
+                <h2 class="section__title">Video Tour</h2>
+
+                <div class="video__container container">
+                    <p class="video__description">Find out more with our video of the most beautiful and 
+                        pleasant places for you and your family.
+                    </p>
+
+                    <div class="video__content">
+                        <video id="video-file">
+                            <source src="assets/video/2835528-hd_1920_1080_25fps.mp4" type="video/mp4">
+                        </video>
+
+                        <button class="button button--flex video__button" id="video-button">
+                            <i class="ri-play-line video__button-icon" id="video-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== SERVICES ====================-->
+            
+            <section id="services" class="services-section">
+                <div class="inner-width">
+                    <h1 class="section-title">Our Services </h1>
+                    <div class="border"></div>
+                    <div class="services-container">
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fa fa-hiking"></i>
+                            </div>
+                            <div class="service-title">Adventure Travel</div>
+                            <div class="service-desc">Thrilling adventures (trekking, hiking, etc.) worldwide.</div>
+                        </div>
+            
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-monument"></i>
+                            </div>
+                            <div class="service-title">Cultural Expeditions</div>
+                            <div class="service-desc">Deep cultural immersion (heritage sites, local customs).</div>
+                        </div>
+            
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <div class="service-title">Luxury Travel</div>
+                            <div class="service-desc">Luxury experiences (accommodation, transport, itineraries).</div>
+                        </div>
+            
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fa fa-briefcase"></i>
+                            </div>
+                            <div class="service-title">Corporate Travel</div>
+                            <div class="service-desc">Seamless business travel solutions (flights, conferences etc.).</div>
+                        </div>
+            
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-binoculars"></i>
+                            </div>
+                            <div class="service-title">Specialized Tours</div>
+                            <div class="service-desc">Group tours for specific interests (photography, food, wellness).</div>
+                        </div>
+            
+                    </div>
+                </div>
+            </section>
 
 
 
+
+
+
+
+            <!--==================== SUBSCRIBE ====================-->
+            <section class="subscribe section">
+                <div class="subscribe__bg">
+                    <div class="subscribe__container container">
+                        <h2 class="section__title subscribe__title">Subscribe Our <br> Newsletter</h2>
+                        <p class="subscribe__description">Subscribe to our newsletter and get a 
+                            special 30% discount.
+                        </p>
     
-
-
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Dugnic Tours</h1>
-            <button class="menu-toggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section id="home" class="slider-container">
-        <div class="slide active"
-            style="background-image: url('Assets/cheetah.jpg');">
-        </div>
-        <div class="slide"
-            style="background-image: url('Assets/gazzelle.jpg');">
-        </div>
-        <div class="slide"
-            style="background-image: url('Assets/elephant.jpg');">
-        </div>
-        <div class="slide"
-            style="background-image: url('Assets/leopard.jpg');">
-        </div>
-        <div class="slide"
-            style="background-image: url('Assets/lion.jpg');">
-        </div>
-        <div class="slide"
-            style="background-image: url('Assets/zebra.jpg');">
-        </div>
-        <a href="#about"><button class="explore">Explore</button></a>
-
-        <button class="arrow left-arrow" id="left">
-            <i class="fas fa-arrow-left"></i>
-        </button>
-        <button class="arrow right-arrow" id="right">
-            <i class="fas fa-arrow-right"></i>
-        </button>
-    </section>
-
-    <div class="vision-mission">
-        <div class="container">
-            <div class="vision">
-                <h2>Our Vision</h2>
-                <p>To become the leading authority in crafting extraordinary travel experiences that transcend the ordinary, enriching the lives of our clients by connecting them with the world’s wonders in a profound and meaningful way with innovation, authenticity, and unparalleled adventure and inspiring them to embrace the spirit of exploration.</p>
-            </div>
-            <div class="mission">
-                <h2>Our Mission</h2>
-                <p>Our mission is to exceed expectations by providing unique, tailor-made travel experiences that unlock the beauty and wonders of the world for everyone to explore.</p>
-            </div>            
-        </div>
-    </div>
-
-    <section id="about" class="about-section">
-        <h2 style="text-align: center;"><i class="fas fa-globe"></i> About Us</h2>
-        <div class="container">
-            <div class="circle-image">
-                <img src="assets/lion.jpg" alt="Your Image" class="about-image">
-            </div>
-            <div class="about-content">
-                <p>Established in April 2024, Dugnic Travels and Expeditions is dedicated 
-                    to providing exceptional travel experiences tailored to diverse needs. 
-                    From adventure trips to luxury accommodations and corporate travel management, 
-                    we prioritize customer satisfaction, integrity, and sustainable 
-                    tourism practices to inspire exploration and enrich lives through innovative travel solutions.
-                </p>
-            </div>            
-        </div>
-    </section>
-
-
-
-    <!--<section id="services" class="services-section">
-        <h2 style="text-align: center;"><i class="fas fa-compass"></i> Why choose us?</h2>
-    <div class="container">
-        <div class="services-wrapper">
-            <div class="service">
-                <h3>Adventure Travel</h3>
-                <div class="rectangular-image">
-                    <img src="assets/buffallo.jpg" alt="Adventure Travel" class="about-image">
-                </div>
-                <p>Organizing thrilling adventure trips worldwide with activities like trekking, hiking, and wildlife safaris.</p>
-            </div>
-            <div class="service">
-                <h3>Cultural Expeditions</h3>
-                <div class="rectangular-image">
-                    <img src="assets/leopard.jpg" alt="Cultural Expeditions" class="about-image">
-                </div>
-                <p>Guided tours to heritage sites, historical landmarks, and indigenous communities for deep cultural immersion.</p>
-            </div>
-            <div class="service">
-                <h3>Luxury Travel</h3>
-                <div class="rectangular-image">
-                    <img src="assets/cheetah.jpg" alt="Luxury Travel" class="about-image">
-                </div>
-                <p>Providing luxury accommodation, private transportation, and personalized itineraries for lavish journeys.</p>
-            </div>
-            <div class="service">
-                <h3>Corporate Travel Management</h3>
-                <div class="rectangular-image">
-                    <img src="assets/elephant.jpg" alt="Corporate Travel Management" class="about-image">
-                </div>
-                <p>Comprehensive travel management solutions for businesses, including flights, accommodations, and conferences.</p>
-            </div>
-            <div class="service">
-                <h3>Specialized Group Tours</h3>
-                <div class="rectangular-image">
-                    <img src="assets/gazzelle.jpg" alt="Specialized Group Tours" class="about-image">
-                </div>
-                <p>Curating specialized group tours for photography, gastronomy, or wellness enthusiasts.</p>
-            </div>
-        </div>        
-    </div>
-</section> -->
-
-
-
-
-<section id="services" class="services-section">
-    <div class="inner-width">
-        <h1 class="section-title">Our Services </h1>
-        <div class="border"></div>
-        <div class="services-container">
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fa fa-hiking"></i>
-                </div>
-                <div class="service-title">Adventure Travel</div>
-                <div class="service-desc">Thrilling adventures (trekking, hiking, etc.) worldwide.</div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-monument"></i>
-                </div>
-                <div class="service-title">Cultural Expeditions</div>
-                <div class="service-desc">Deep cultural immersion (heritage sites, local customs).</div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-hotel"></i>
-                </div>
-                <div class="service-title">Luxury Travel</div>
-                <div class="service-desc">Luxury experiences (accommodation, transport, itineraries).</div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fa fa-briefcase"></i>
-                </div>
-                <div class="service-title">Corporate Travel</div>
-                <div class="service-desc">Seamless business travel solutions (flights, conferences etc.).</div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-icon">
-                    <i class="fas fa-binoculars"></i>
-                </div>
-                <div class="service-title">Specialized Tours</div>
-                <div class="service-desc">Group tours for specific interests (photography, food, wellness).</div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-
-
+                        <form action="" class="subscribe__form">
+                            <input type="text" placeholder="Enter email" class="subscribe__input">
     
+                            <button class="button">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <!--==================== SPONSORS ====================-->
+            <section class="sponsor section">
+                <div class="sponsor__container container grid">
+                    <div class="sponsor__content">
+                        <img src="assets/img/sponsors1.png" alt="" class="sponsor__img">
+                    </div>
+                    <div class="sponsor__content">
+                        <img src="assets/img/sponsors2.png" alt="" class="sponsor__img">
+                    </div>
+                    <div class="sponsor__content">
+                        <img src="assets/img/sponsors3.png" alt="" class="sponsor__img">
+                    </div>
+                    <div class="sponsor__content">
+                        <img src="assets/img/sponsors4.png" alt="" class="sponsor__img">
+                    </div>
+                    <div class="sponsor__content">
+                        <img src="assets/img/sponsors5.png" alt="" class="sponsor__img">
+                    </div>
+                </div>
+            </section>
+        </main>
 
-<section id="contact" class="contact-section">
-    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
-    <div class="container">
-        <div class="contact-content">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.256232759526!2d36.81329086912922!3d-1.2855640767591887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d714b90b4d%3A0xf58d8f9b297c294c!2sCentral%20Business%20District%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1712097001521!5m2!1sen!2ske" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h2>Dugnic Tours</h2>
-            </div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <p class="footer-copy">&copy; 2024 Dugnic Travels and Expeditions. All Rights Reserved.</p>
-    </div>
-
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <h3 class="footer__title">Travel</h3>
+                        <p class="footer__description">Travel you choose the <br> destination, 
+                            we offer you the <br> experience.
+                        </p>
+                        <div>
+                            <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+                                <i class="ri-facebook-box-fill"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="footer__social">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" class="footer__social">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                        </div>
+                    </div>
     
-
-</footer>
-<!-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-682dd37d-9e70-4f33-b434-06c74b918295" data-elfsight-app-lazy></div> -->
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">About</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">About Us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Features</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">New & Blog</a>
+                            </li>
+                        </ul>
+                    </div>
     
-<script src="script.js"></script>
-</body>
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Company</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Team</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Plan y Pricing</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Become a member</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Support</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">FAQs</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Support Center</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2024 Dugnic Tours. All rigths reserved.</p>
+                    <div class="footer__terms">
+                        <a href="#" class="footer__terms-link">Terms & Agreements</a>
+                        <a href="#" class="footer__terms-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+         <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i style="color: black;" class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
