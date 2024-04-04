@@ -25,9 +25,25 @@
 
 
     <style>
-        .additional-text {
-            display: none;
-          }
+          .additional-text {
+            display: none; /* Initially hide the additional text */
+            padding: 20px; /* Add padding for spacing */
+            background-color: #f0f0f0; /* Set background color */
+            border: 1px solid #ccc; /* Add border for distinction */
+            border-radius: 5px; /* Add border radius for rounded corners */
+            margin-top: 10px; /* Add margin for spacing */
+        }
+        
+        .additional-text h3 {
+            margin-top: 0; /* Remove default margin for heading */
+        }
+        
+        .additional-text p {
+            margin: 10px 0; /* Add margin for paragraphs */
+            font-size: 14px; /* Set font size */
+            color: #333; /* Set text color */
+        }
+        
 
         .services-section{
             background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(assets/img/lion.jpg);
@@ -170,6 +186,26 @@
         font-size: 14px; /* Adjust the font size of service descriptions */
     }
 }
+
+        /* CSS for mobile version */
+@media only screen and (max-width: 600px) {
+    .additional-text {
+        padding: 10px; /* Reduce padding for spacing */
+        border: none; /* Remove border */
+        border-radius: 0; /* Remove border radius */
+        margin-top: 5px; /* Reduce margin for spacing */
+    }
+
+    .additional-text h3 {
+        font-size: 16px; /* Increase font size for headings */
+    }
+
+    .additional-text p {
+        margin: 5px 0; /* Reduce margin for paragraphs */
+        font-size: 12px; /* Decrease font size */
+    }
+}
+
 
 
 
@@ -343,8 +379,11 @@ window.onclick = function(event) {
 
                         <a style="color: black; cursor: pointer;" class="buttonn" onclick="toggleText()">Read more</a>
                         <div class="additional-text" id="additionalText">
-                          <p>This is the additional text that will be displayed when you click "Read more"(to be added).</p>
-                        </div>
+                            <h3>Mission</h3>
+                            <p>Our mission is to exceed expectations by providing unique, tailor-made travel experiences that unlock the beauty and wonders of the world for everyone to explore.</p>
+                            <h3>Vision</h3>
+                            <p>To become the leading authority in crafting extraordinary travel experiences that transcend the ordinary, enriching the lives of our clients by connecting them with the world’s wonders in a profound and meaningful way with innovation, authenticity, and unparalleled adventure and inspiring them to embrace the spirit of exploration.</p>
+                        </div>                        
                     </div>
 
                     <div class="about__img">

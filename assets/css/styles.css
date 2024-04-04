@@ -154,6 +154,23 @@ button {
   cursor: pointer;
 }
 
+
+
+
+button,
+input {
+  border: none;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+button {
+  cursor: pointer;
+}
+
+
+
+
 input {
   outline: none;
 }
@@ -404,6 +421,40 @@ input {
 .button--link:hover {
   background: none;
 }
+
+
+
+
+
+.buttonn {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  font-weight: var(--font-semi-bold);
+  transition: .3s;
+}
+
+.buttonn:hover {
+  background-color: var(--first-color-alt);
+}
+
+.buttonn--flex {
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.buttonn--link {
+  background: none;
+  padding: 0;
+}
+
+.buttonn--link:hover {
+  background: none;
+}
+
+
 
 /*=============== ABOUT ===============*/
 .about__data {
