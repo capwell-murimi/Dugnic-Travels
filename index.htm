@@ -110,7 +110,39 @@
                 font-size: 14px; 
             }
             
-            @media screen and (max-width:960px){
+
+
+
+            /* CSS for mobile version */
+@media only screen and (max-width: 600px) {
+    .services-section .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .services-section .service-box {
+        width: 45%; /* Adjust the width of each service box */
+        margin-bottom: 20px;
+    }
+
+    .services-section .service-content {
+        text-align: center;
+    }
+
+    .services-section .service-title {
+        font-size: 16px; /* Adjust the font size of service titles */
+    }
+
+    .services-section .service-desc {
+        font-size: 14px; /* Adjust the font size of service descriptions */
+    }
+}
+
+
+
+
+            /*@media screen and (max-width:960px){
                 .service-box{
                     max-width: 45%
                 }
@@ -126,7 +158,7 @@
                 .service-box{
                     max-width: 100%
                 }
-            }
+            }*/
         
             
           
