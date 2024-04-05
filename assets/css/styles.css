@@ -528,6 +528,7 @@ input {
 
 .discover__img {
   transition: var(--img-transition);
+  width: 400px;
 }
 
 .discover__img:hover {
@@ -699,6 +700,16 @@ input {
   background-color: var(--first-color-second);
   padding: 2.5rem 0;
 }
+
+
+
+
+
+
+
+
+
+
 
 .subscribe__title, 
 .subscribe__description {

@@ -20,11 +20,165 @@
 
 
 
+
         <title>Dugnic Tours</title>
     </head>
 
 
     <style>
+
+        /* css slider */
+        .content p{
+            color: white;
+        }
+    .slider{
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+    }
+    .slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000 40%, transparent
+    );
+}
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 100px;
+    margin: 0;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+.arrows{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+.arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: black;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: none;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.5);
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+@media screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
           .additional-text {
             display: none; /* Initially hide the additional text */
             padding: 20px; /* Add padding for spacing */
@@ -236,6 +390,96 @@
 
 
 
+
+
+
+
+
+
+
+   <!--<style>
+        /* Adjust the size of the Swiper container */
+.swiper-container {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 400px; /* Set a maximum width if necessary */
+    margin: 0 auto; /* Center the slider horizontally */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Adjust the size of the navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 30px; /* Set the width of the navigation buttons */
+    height: 30px; /* Set the height of the navigation buttons */
+    background-size: 30px 30px; /* Adjust the size of the button icon */
+}
+
+/* Adjust the size of the pagination bullets */
+.swiper-pagination-bullet {
+    width: 10px; /* Set the width of the pagination bullets */
+    height: 10px; /* Set the height of the pagination bullets */
+    margin: 0 5px; /* Adjust the margin between bullets */
+}
+
+    </style>-->
+   
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                // Optional parameters
+                slidesPerView: 2,
+                spaceBetween: 30,
+                loop: true,
+    
+                // Autoplay
+                autoplay: {
+                    delay: 7000, // Delay between slides in milliseconds (5 seconds in this example)
+                    disableOnInteraction: false, // Allow autoplay to continue after user interactions
+                },
+    
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+    
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+    
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all read more buttons
+            var readMoreButtons = document.querySelectorAll('.read-more-btn');
+        
+            // Add click event listener to each read more button
+            readMoreButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Toggle visibility of additional text
+                    var additionalText = this.parentElement.querySelector('.additional-text');
+                    additionalText.style.display = additionalText.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+        
+    </script>
+    
+
+
+
     <script>
         function toggleText() {
           var additionalText = document.getElementById("additionalText");
@@ -250,8 +494,8 @@
     </script>
 
 
-
-
+  
+    
 
         
 
@@ -278,6 +522,20 @@ window.onclick = function(event) {
   }
 }
     </script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
 
 
 
@@ -338,8 +596,9 @@ window.onclick = function(event) {
                 <div class="home__container container grid">
                     <div class="home__data">
                         <!--<span class="home__data-subtitle">Discover your place</span>-->
-                        <h1 class="home__data-title">Explore The <br> Best <b>Beautiful <br> Savannah</b></h1>
+                        <h1 class="home__data-title">Explore the <br> Best <b>Beautiful <br> Savannah</b></h1>
                         <a style="color: black;" href="#services" class="button">Explore</a>
+                        <a href="mailto:" style="color: black;" href="#services" class="button">Book With Us</a>
 
                     </div>
 
@@ -357,7 +616,7 @@ window.onclick = function(event) {
 
                     <div class="home__info">
                         <div>
-                            <span style="color: black;" class="home__info-title">The best places to visit</span>
+                            <span style="color: black;" class="home__info-title">13 magical sites to visit</span>
                             <a style="color: black;" href="#discover" class="button button--flex button--link home__info-button">
                                 More <i class="ri-arrow-right-line"></i>
                             </a>
@@ -399,47 +658,482 @@ window.onclick = function(event) {
             </section>
             
             <!--==================== DISCOVER ====================-->
-            <section class="discover section" id="discover">
-                <h2 class="section__title">Discover the most <br> attractive places</h2>
-                
-                <div class="discover__container container swiper-container">
+
+            <h2 class="section__title">Swipe to <br> Discover the most <br> attractive places</h2>
+            <section style="overflow-x: hidden;" class="discover section" id="discover">
+                <div class=" container swiper-container slider">
+                    <!-- list Items -->
+                    <div class="list">
+                        <div class="item active">
+                            <img src="/assets/img/girrafe.jpg">
+                            <div class="content">
+                                <p>Samburu National Reserve</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Located in Kenya's northern region, Samburu offers a unique safari experience with species not found in other parks, such as the reticulated giraffe, Grevy's zebra, and Somali ostrich.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/wildbeest.jpg">
+                            <div class="content">
+                                <p>Maasai Mara National Reserve</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Famous for its abundant wildlife and the annual wildebeest migration. Visitors can witness the "Big Five" (lion, elephant, buffalo, leopard, and rhinoceros) and enjoy hot air balloon safaris.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/nakuru.jpg">
+                            <div class="content">
+                                <p>Lake Nakuru National Park</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white; z-index: 2;">
+                                    Famous for its pink flamingos, Lake Nakuru is also a sanctuary for rhinos and other wildlife. Visitors can enjoy game drives and birdwatching.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/lamu.jpeg">
+                            <div class="content">
+                                <p>Lamu Island</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    A UNESCO World Heritage Site, Lamu is known for its well-preserved Swahili culture, beautiful beaches, and traditional dhows. Visitors can explore the narrow streets of Lamu Town and enjoy water activities.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/hellsgate.jpeg">
+                            <div class="content">
+                                <p>Hells gate National Park</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Famous for its dramatic scenery, including towering cliffs, gorges, and hot springs. Visitors can hike, rock climb, and enjoy wildlife viewing in a unique landscape.
+                                    Known for its lush forests, waterfalls, and diverse wildlife, including the rare bongo antelope. Visitors can stay in tree lodges and enjoy game viewing from elevated platforms.
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="/assets/img/abadare.jpeg">
+                            <div class="content">
+                                <p>Aberdare National Park</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Known for its lush forests, waterfalls, and diverse wildlife, including the rare bongo antelope. Visitors can stay in tree lodges and enjoy game viewing from elevated platforms.
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="/assets/img/laketurkana.jpeg">
+                            <div class="content">
+                                <p>Lake Turkana</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    The largest desert lake in the world, Lake Turkana is surrounded by volcanic landscapes and is home to unique wildlife, including Nile crocodiles and various bird species.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="/assets/img/diani.jpeg">
+                            <div class="content">
+                                <p>Diani Beach</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Located on Kenya's south coast, Diani Beach offers pristine white sands, turquoise waters, and a range of water sports and activities, including snorkeling, diving, and dolphin watching.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="/assets/img/shaba.jpeg">
+                            <div class="content">
+                                <p>Shaba National Reserve</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Part of the Ewaso Ng'iro ecosystem, Shaba is known for its rugged landscapes, diverse wildlife, and the Joy Adamson Camp, made famous by the book and film "Born Free.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="item">
+                            <img src="/assets/img/olpajeta.jpeg">
+                            <div class="content">
+                                <p>Ol Pejeta Conservacy</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    A leading conservation area in Kenya, Ol Pejeta is home to the last two northern white rhinos and a variety of other wildlife. Visitors can enjoy game drives, guided walks, and visits to the chimpanzee sanctuary.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="item">
+                            <img src="/assets/img/tsavo.jpeg">
+                            <div class="content">
+                                <p>Tsavo National Parks(east and west)</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Tsavo is one of the largest wildlife reserves in the world, offering diverse landscapes, including savannahs, hills, and volcanic cones. Visitors can spot elephants, lions, and rhinos.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="item">
+                            <img src="/assets/img/mtkenya.jpeg">
+                            <div class="content">
+                                <p>Mt Kenya</p>
+                                <h2>22 tours</h2>
+                                <p style="color: white;">
+                                    Africa's second-highest mountain offers breathtaking scenery, diverse flora and fauna, and opportunities for mountain climbing, trekking, and wildlife viewing.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- button arrows -->
+                    <div class="arrows">
+                        <button id="prev"><</button>
+                        <button id="next">></button>
+                    </div>
+                    <!-- thumbnail -->
+                  <div class="thumbnail">
+                        <div class="item active">
+                            <img src="/assets/img/girrafe.jpg">
+                            <div class="content">
+                                Samburu
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/wildbeest.jpg">
+                            <div class="content">
+                                Maasai Mara
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/nakuru.jpg">
+                            <div class="content">
+                                Lake Nakuru
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/lamu.jpeg">
+                            <div class="content">
+                                Lamu Island
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/hellsgate.jpeg">
+                            <div class="content">
+                                Hells Gate
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/abadare.jpeg">
+                            <div class="content">
+                                Aberdare
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/laketurkana.jpeg">
+                            <div class="content">
+                                Aberdare
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="/assets/img/diani.jpeg">
+                            <div class="content">
+                                Diani Beach
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/shaba.jpeg">
+                            <div class="content">
+                                Shaba
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/olpajeta.jpeg">
+                            <div class="content">
+                                Ol Pejeta
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/tsavo.jpeg">
+                            <div class="content">
+                                Tsavo
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="/assets/img/mtkenya.jpeg">
+                            <div class="content">
+                                Mt Kenya
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--<div class="discover__container container swiper-container">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     <div class="swiper-wrapper">
-                        <!--==================== DISCOVER 1 ====================-->
+                        <!--==================== DISCOVER 1 ====================-
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/samburu.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Samburu National Reserve</h2>
+                                <span class="discover__description">2 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    
+                                <p>  Located in Kenya's northern region, Samburu offers a unique safari experience with species not found in other parks, such as the reticulated giraffe, Grevy's zebra, and Somali ostrich.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="discover__card swiper-slide">
                             <img src="assets/img/hippo.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">Amboseli</h2>
                                 <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        <!--==================== DISCOVER 2 ====================-->
-                        <!--<div class="discover__card swiper-slide">
-                            <img src="assets/img/elephant2.jpg" alt="" class="discover__img">
-                            <div class="discover__data">
-                                <h2 class="discover__title">Tsavo</h2>
-                                <span class="discover__description">15 tours available</span>
-                            </div>
-                        </div>-->
 
-                        <!--==================== DISCOVER 3 ====================-->
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboseli</h2>
+                                <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboseli</h2>
+                                <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboseli</h2>
+                                <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboseli</h2>
+                                <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboseli</h2>
+                                <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboseli</h2>
+                                <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Amboseli</h2>
+                                <span class="discover__description">24 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                      
+                    
+                        <!--==================== DISCOVER 3 ====================--
                         <div class="discover__card swiper-slide">
                             <img src="assets/img/rhino.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">Tsavo</h2>
                                 <span class="discover__description">18 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        <!--==================== DISCOVER 4 ====================-->
+                        <!--==================== DISCOVER 4 ====================-
                         <div class="discover__card swiper-slide">
                             <img src="assets/img/buffalo2.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">Maasai Mara</h2>
                                 <span class="discover__description">18 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/Thailand.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Thailand</h2>
+                                <span class="discover__description">18 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/india.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">India</h2>
+                                <span class="discover__description">18 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/coast.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Coast Destinations</h2>
+                                <span class="discover__description">18 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/nakuru.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Lake Nakuru National Park</h2>
+                                <span class="discover__description">18 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="discover__card swiper-slide">
+                            <img src="assets/img/hippo.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h2 class="discover__title">Mt Kenya</h2>
+                                <span class="discover__description">18 tours available</span>
+                                <button class="read-more-btn">Read more</button>
+                                <div class="additional-text">
+                                    <p> Known for its stunning views of Mount Kilimanjaro, Amboseli is home to large elephant herds, as well as other wildlife such as lions, cheetahs, and giraffes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     
@@ -447,12 +1141,12 @@ window.onclick = function(event) {
                     
                     <div id="myModal" class="modal">
 
-                        <!-- Modal content -->
+                        <!-- Modal content --
                         <div class="modal-content">
                           <span class="close" onclick="closeModal()">&times;</span>
                           <h2>Book with Us</h2>
                           <form action="/submit_booking" method="post">
-                              <!-- Your form fields go here -->
+                              <!-- Your form fields go here --
                               <label for="name">Name:</label>
                               <input type="text" id="name" name="name" required><br><br>
                               <label for="email">Email:</label>
@@ -464,8 +1158,18 @@ window.onclick = function(event) {
                       </div>
                       
                     
-                </div>
+                </div>-->
             </section>
+
+
+
+
+
+
+
+
+
+
 
             <!--==================== EXPERIENCE ====================-->
             <section class="experience section">
@@ -568,11 +1272,51 @@ window.onclick = function(event) {
                             <div class="service-title">Specialized Tours</div>
                             <div class="service-desc">Group tours for specific interests (photography, food, wellness).</div>
                         </div>
+
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="service-title">Wildlife and Safari</div>
+                            <div class="service-desc">Exciting wildlife encounters and safari experiences.</div>
+                        </div>
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="service-title">Cultural and Community</div>
+                            <div class="service-desc">Engaging cultural immersion and community experiences.</div>
+                        </div>
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="service-title">Adventure and Outdoor</div>
+                            <div class="service-desc">Exciting outdoor adventures and activities.</div>
+                        </div>
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="service-title">Unique Accommodations and Experience</div>
+                            <div class="service-desc">Unforgettable accommodations and unique travel experiences.</div>
+                        </div>
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="service-title">Ecological and Environmental</div>
+                            <div class="service-desc">Sustainable and eco-friendly travel options.</div>
+                        </div>
             
                     </div>
                 </div>
             </section>
 
+
+
+
+           
 
 
 
@@ -708,5 +1452,6 @@ window.onclick = function(event) {
 
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
