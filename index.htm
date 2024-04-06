@@ -27,6 +27,25 @@
 
     <style>
 
+        /* Add animation class to the testimonials section */
+.slide-from-right {
+    animation: slideFromRight 1s ease forwards;
+    opacity: 0; /* Initially hide the section */
+}
+
+/* Define the animation keyframes */
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%); /* Start from the right */
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        transform: translateX(0); /* Move to the original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+
         /* css slider */
         .content p{
             color: white;
@@ -1231,7 +1250,7 @@ window.onclick = function(event) {
 
             <!--==================== SERVICES ====================-->
             
-            <section id="services" class="services-section">
+            <section id="services" class="services-section slide-from-right">
                 <div class="inner-width">
                     <h2 class="section-title">Our Services </h2>
                     <div class="border"></div>
@@ -1322,7 +1341,7 @@ window.onclick = function(event) {
 
             <!--Testimonials-->
             <h2 class="section-title">What they say About Us </h2>
-            <section id="testimonials">
+            <section id="testimonials" class="slide-from-right">
                 <figure class="snip1157">
                     <blockquote>Dugnic Tours and Expeditions delivered an exceptional adventure! From thrilling activities to luxurious stays, every detail was meticulously planned. The knowledgeable guides made the journey even more enriching. Can't wait for the next trip!
                       <div class="arrow"></div>
