@@ -862,7 +862,7 @@ figure.snip1157 .author h5 span {
 }
 
 .sponsor__content:hover .sponsor__img {
-  filter: invert(0.5);
+  filter: invert(1);
 }
 
 .sponsor__img {
