@@ -638,6 +638,7 @@ figure.snip1157 .author h5 span {
 }
 
 #testimonials {
+    opacity: 0;
     display: flex;
     justify-content: center; /* Center the testimonials horizontally */
     flex-wrap: wrap; /* Allow testimonials to go to the next line */
