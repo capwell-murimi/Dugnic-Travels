@@ -597,7 +597,7 @@ window.onclick = function(event) {
                             <a style="color: white;" href="#testimonials" class="nav__link">Testimonials</a>
                         </li>
                         <li class="nav__item">
-                            <a style="color: white;" href="#contact" class="nav__link">Contact Us</a>
+                            <a style="color: white;" href="#contact-form" class="nav__link">Contact Us</a>
                         </li>
                     </ul>
 
@@ -626,7 +626,7 @@ window.onclick = function(event) {
                         <!--<span class="home__data-subtitle">Discover your place</span>-->
                         <h1 class="home__data-title">Explore the <br> Best <b>Beautiful <br> Savannah</b></h1>
                         <a style="color: black;" href="#services" class="button">Explore</a>
-                        <a style="color: black;" href="mailto: booking@dugnictoursandexpeditions.com" class="button">Book With Us</a>
+                        <a style="color: black;" href="#contact-form" class="button">Book With Us</a>
 
                     </div>
 
@@ -1386,6 +1386,63 @@ window.onclick = function(event) {
 
 
 
+                        <footer class="footer section">
+                <div class="footer__container container grid">
+                    <div id="contact-form" class="footer_contact">
+                        <h2>Book Your Adventure</h2>
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="7903775f-c501-427f-a5be-7c25aed6b084">
+                            <div class="form-group">
+                                <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                            </div>
+            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div>
+            
+                            <div class="form-group">
+                                <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+                            </div>
+            
+                            <div class="form-group">
+                                <select id="destination" name="destination" required>
+                                    <option value="">Select Destination</option>
+                                    <option value="Samburu National Reserve">Samburu National Reserve</option>
+                                    <option value="Maasai Mara National Reserve">Maasai Mara National Reserve</option>
+                                    <option value="Lake Nakuru National Park">Lake Nakuru National Park</option>
+                                    <option value="Lamu Island">Lamu Island</option>
+                                    <option value="Hells gate National Park">Hells gate National Park</option>
+                                    <option value="Aberdare National Park">Aberdare National Park</option>
+                                    <option value="Lake Turkana">Lake Turkana</option>
+                                    <option value="Diani Beach">Diani Beach</option>
+                                    <option value="Shaba National Reserve">Shaba National Reserve</option>
+                                    <option value="Ol Pejeta Conservacy">Ol Pejeta Conservacy</option>
+                                    <option value="Tsavo National Parks (east and west)">Tsavo National Parks (east and west)
+                                    </option>
+                                    <option value="Mt Kenya">Mt Kenya</option>
+                                </select>
+                            </div>
+            
+                            <div class="form-group">
+                                <input type="date" id="date" name="date" placeholder="Preferred Travel Date" required>
+                            </div>
+            
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Additional Message (Optional)"></textarea>
+                            </div>
+            
+                            <div class="form-group">
+                                <button type="submit">Book Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+
             <!--==================== SUBSCRIBE ====================-->
             <section class="subscribe section">
                 <div class="subscribe__bg">
@@ -1501,6 +1558,78 @@ window.onclick = function(event) {
                 </div>
             </div>
         </footer>
+
+
+
+        <style>
+            .footer_contact {
+                background-image: url('assets/img/lion.jpg');
+                background-color: #f8f8f8;
+                width: auto;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+            .footer_contact h2 {
+                margin-bottom: 20px;
+                color: #f5f3f3;
+                font-size: 24px;
+                text-align: center;
+            }
+            .form-group {
+                margin-bottom: 20px;
+                width: auto;
+            }
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group textarea,
+            .form-group select {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 18px;
+                background-color: #f5f5f5;
+                transition: border-color 0.3s;
+            }
+            .form-group input[type="text"]:focus,
+            .form-group input[type="email"]:focus,
+            .form-group textarea:focus,
+            .form-group select:focus {
+                border-color: #007bff;
+            }
+            .form-group select {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath fill='%23000000' d='M4 5L0 .156.719 0l3.281 4L7.28 0 8 .156'/%3E%3C/svg%3E");
+                background-position: right 15px top 50%;
+                background-size: 10px auto;
+                background-repeat: no-repeat;
+                padding-right: 30px;
+            }
+            .form-group input[type="date"] {
+                width: calc(100% - 22px);
+            }
+            .form-group textarea {
+                width: 100%;
+                height: 120px;
+                resize: none;
+            }
+            .form-group button[type="submit"] {
+                background-color: #d7e073;
+                color: #1c1b1b;
+                border: none;
+                border-radius: 8px;
+                padding: 15px 30px;
+                font-size: 20px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .form-group button[type="submit"]:hover {
+                background-color: #d8e170;
+            }
+        </style>
 
          <!--========== SCROLL UP ==========-->
         <a href="#" class="scrollup" id="scroll-up">
