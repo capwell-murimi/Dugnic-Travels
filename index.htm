@@ -1346,36 +1346,177 @@ window.onclick = function(event) {
 
 
             <!--Testimonials-->
-            <h2 class="section-title">What they say About Us </h2>
-            <section id="testimonials" class="slide-from-right">
-                <figure class="snip1157">
-                    <blockquote>Dugnic Tours and Expeditions delivered an exceptional adventure! From thrilling activities to luxurious stays, every detail was meticulously planned. The knowledgeable guides made the journey even more enriching. Can't wait for the next trip!
-                      <div class="arrow"></div>
-                    </blockquote>
-                    <img src="/assets/img/john.jpg" alt="sq-sample3" />
-                    <div class="author">
-                      <h5>John<span> Tourist</span></h5>
+             <h4 class="section-title">what they say about us</h3>
+            <div id="testimonials" class="testimonial-container">
+                <div class="progress-bar"></div>
+                <div class="fas fa-quote-right fa-quote"></div>
+                <div class="fas fa-quote-left fa-quote"></div>
+                <p class="testimonial">
+                    Absolutely loved the tour experience! From breathtaking landscapes to immersive cultural experiences, every moment felt like a dream come true. Can\'t wait to embark on another adventure with this incredible tour company!
+                </p>
+                <div class="user">
+                    <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image">
+                    <div class="user-details">
+                        <h4 class="username">Miyah Myles</h4>
+                        <p class="role">Marketing</p>
                     </div>
-                  </figure>
-                  <figure class="snip1157 hover">
-                    <blockquote>Dugnic's cultural expedition was truly enriching. Thoughtful itinerary, passionate guides, and a commitment to responsible tourism. Highly recommended for an authentic travel experience.
-                      <div class="arrow"></div>
-                    </blockquote>
-                    <img src="/assets/img/ilya.jpg" alt="sq-sample27" />
-                    <div class="author">
-                      <h5>Edward<span> Tourist</span></h5>
-                    </div>
-                  </figure>
-                  <figure class="snip1157">
-                    <blockquote>Dugnic surpassed all expectations! Perfect mix of adventure and relaxation, breathtaking landscapes, and top-notch service. The guides were friendly and knowledgeable. Can't wait for my next Dugnic adventure!
-                      <div class="arrow"></div>
-                    </blockquote>
-                    <img src="/assets/img/edward.jpg" alt="sq-sample17" />
-                    <div class="author">
-                      <h5>Linda<span> Tourist</span></h5>
-                    </div>
-                  </figure>
-            </section>
+                </div>
+            </div>
+
+
+        <style>
+            .testimonial-container {
+                background-color: #d7e073;
+                color: #212020;
+                border-radius: 15px;
+                margin: 20px auto;
+                padding: 50px 80px;
+                max-width: 768px;
+                position: relative;
+              }
+              
+              .fa-quote {
+                color: rgba(255, 255, 255, 0.3);
+                font-size: 28px;
+                position: absolute;
+                top: 70px;
+              }
+              
+              .fa-quote-right {
+                left: 40px;
+              }
+              
+              .fa-quote-left {
+                right: 40px;
+              }
+              
+              .testimonial {
+                line-height: 28px;
+                text-align: justify;
+              }
+              
+              .user {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              
+              .user .user-image {
+                border-radius: 50%;
+                height: 75px;
+                width: 75px;
+                object-fit: cover;
+              }
+              
+              .user .user-details {
+                margin-left: 10px;
+              }
+              
+              .user .username {
+                margin: 0;
+              }
+              
+              .user .role {
+                font-weight: normal;
+                margin: 8px 0;
+              }
+              
+              .progress-bar {
+                background-color: #fff;
+                height: 6px;
+                border-radius: 50%;
+                width: 100%;
+                margin: 15px;
+                animation: grow 10s linear infinite;
+                transform-origin: left;
+              }
+              
+              @keyframes grow {
+                0% {
+                  transform: scaleX(0);
+                }
+              }
+              
+              
+              @media(max-width: 768px) {
+                .testimonial-container {
+                  padding: 20px 30px;
+                }
+                .fa-quote {
+                  visibility: hidden;
+                }
+              }
+        </style>
+
+
+        <script>
+    const testimonialContainer = document.querySelector('.testimonial-container')
+    const testimonial = document.querySelector('.testimonial')
+    const userImage = document.querySelector('.user-image')
+    const username = document.querySelector('.username')
+    const role = document.querySelector('.role')
+
+    const testimonials = [
+    {
+        name: 'Miyah Myles',
+        position: 'Frequent Traveler',
+        photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6',
+        text: 'Absolutely loved the tour experience! From breathtaking landscapes to immersive cultural experiences, every moment felt like a dream come true. Can\'t wait to embark on another adventure with this incredible tour company!'
+    },
+    {
+        name: 'June Cha',
+        position: 'Adventure Enthusiast',
+        photo: 'https://randomuser.me/api/portraits/women/44.jpg',
+        text: 'Had an amazing time exploring new destinations and trying out exciting activities! The tour guides were knowledgeable and ensured that every aspect of the trip was well-organized. Definitely recommend this tour company for unforgettable adventures!'
+    },
+    {
+        name: 'Iida Niskanen',
+        position: 'Travel Planner',
+        photo: 'https://randomuser.me/api/portraits/women/68.jpg',
+        text: 'Planning our trip was a breeze with this tour company! From booking accommodations to arranging transportation, everything was taken care of seamlessly. The tour itinerary was well-crafted, allowing us to make the most of our time and create unforgettable memories.'
+    },
+    {
+        name: 'Jhonathan Nunfiez',
+        position: 'Sightseeing Enthusiast',
+        photo: 'https://randomuser.me/api/portraits/women/43.jpg',
+        text: 'The tour offered a perfect blend of sightseeing and relaxation. From iconic landmarks to hidden gems, each destination left us in awe of its beauty. The tour guides were friendly and informative, adding an extra layer of enjoyment to the experience.'
+    },
+    {
+        name: 'Sasha Ho',
+        position: 'Adventure Photographer',
+        photo: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb',
+        text: "As a photographer, I'm always on the lookout for picturesque locations, and this tour didn't disappoint! From sunrise over majestic mountains to sunset on pristine beaches, every moment was a photographer's dream. Highly recommend this tour company for capturing breathtaking shots!"
+    },
+    {
+        name: 'Veeti Seppanen',
+        position: 'Travel Enthusiast',
+        photo: 'https://randomuser.me/api/portraits/men/97.jpg',
+        text: 'The tour exceeded all expectations! From the moment we arrived, we were greeted with warmth and hospitality. The itinerary was well-paced, allowing us to explore each destination thoroughly. Would definitely book with this tour company again for future adventures!'
+    }
+]
+
+
+    let idx = 1
+
+    function upadteTestimonial() {
+        const { name, position, photo, text } = testimonials[idx]
+
+        testimonial.innerHTML = text
+        userImage.src = photo
+        username.innerHTML = name
+        role.innerHTML = position
+
+        idx++
+
+        if(idx > testimonials.length - 1) {
+            idx = 0
+        }
+    }
+
+    setInterval(upadteTestimonial, 10000)
+</script>
+
+
 
 
 
